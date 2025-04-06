@@ -19,6 +19,7 @@
         <!-- Image on the left side -->
         <div class="image-container">
             <img src="/static/images/logo.png" alt="Signup Image">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Signup Image">
         </div>
 
         <form action="/signup" method="POST">
