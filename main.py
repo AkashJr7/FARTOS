@@ -357,13 +357,17 @@ def login():
 def logout():
     session.pop('user_id', None)
     return redirect('/login')
-
+'''
 @app.route('/')
 def indexx():
     if 'user_id' not in session:
         return redirect('/signup')
     return render_template('index.html')
-
+'''
+@app.route('/')
+def home():
+    return render_template('index.html')  # Make sure this exists in templates/
+	
 # Global variable to store selected item
 CART = {
     'items': [],  # List of cart items
