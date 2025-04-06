@@ -360,11 +360,7 @@ def logout():
 
 @app.route('/')
 def home():
-	 try:
-		 return render_template('index.html')
-         except Exception as e:
-		 return f"Template error: {str(e)}", 500
-
+    return render_template('index.html')
 
 	
 # Global variable to store selected item
