@@ -1,0 +1,15 @@
+.goggles-container, .cart-items {
+    display: flex;
+    gap: 20px;
+}
+
+.goggle-item, .cart-item {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+
+img {
+    width: 100px;
+    height: auto;
+}

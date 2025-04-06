@@ -1,0 +1,105 @@
+/* Add this to your existing styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Add this to your existing styles.css */
+
+.image-container {
+    width: 100%;
+    text-align: left; /* Align the image to the left */
+    margin-bottom: 20px; /* Space between image and form */
+}
+
+.image-container img {
+    max-width: 100%; /* Ensure the image doesn't overflow */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: Add rounded corners */
+}
+
+.form-container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 25px;
+    width: 350px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    min-height: 400px; /* Adjust height as needed */
+}
+
+h1 {
+    text-align: center;
+    color: #333; /* Changed to a darker color for better visibility */
+    margin-bottom: 20px;
+    font-size: 24px;
+    width: 100%; /* Ensure it spans the full width */
+}
+
+form {
+    width: 100%; /* Ensure the form spans the full width */
+    margin-bottom: 20px; /* Space between form and bottom link */
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+    text-align: left;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+button {
+    background-color: #ff7e5f;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+button:hover {
+    background-color: #e76f51;
+}
+
+input:focus, select:focus {
+    border-color: #ff7e5f;
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 126, 95, 0.5);
+}
+
+.bottom-link {
+    margin-top: auto; /* Pushes the link to the bottom */
+    text-align: center;
+    color: #333; /* Changed to a darker color for better visibility */
+}
+
+a {
+    color: #ff7e5f; /* Match the button color */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}

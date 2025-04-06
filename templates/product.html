@@ -1,0 +1,3217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Product</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+<link rel="icon" type="image/png" href="static/images/icons/Try-Buy.png">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/fonts/linearicons-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="static/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="static/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/vendor/slick/slick.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/vendor/MagnificPopup/magnific-popup.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/css/main.css">
+	<link rel="stylesheet" type="text/css" href="static/css/util.css">
+<!--===============================================================================================-->
+<style>
+    .size-option {
+        position: relative;
+    }
+    
+    .size-input {
+        position: absolute;
+        opacity: 0;
+    }
+    
+    .size-label {
+        display: inline-block;
+        padding: 5px 15px;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+    
+    .size-input:checked + .size-label {
+        background: #077bd4;
+        color: white;
+        border-color: #077bd4;
+    }
+    
+    .size-chart-link {
+        text-decoration: underline;
+        transition: color 0.3s;
+    }
+    
+    .size-chart-link:hover {
+        color: #077bd4;
+    }
+    
+    .typing-indicator {
+        display: inline-flex;
+        padding: 5px;
+    }
+    
+    .typing-indicator span {
+        height: 8px;
+        width: 8px;
+        background: #555;
+        border-radius: 50%;
+        display: inline-block;
+        margin: 0 2px;
+        animation: typing 1s infinite;
+    }
+    
+    .typing-indicator span:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+    
+    .typing-indicator span:nth-child(3) {
+        animation-delay: 0.4s;
+    }
+    
+    @keyframes typing {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-5px); }
+        100% { transform: translateY(0); }
+    }
+	/* Chatbot Widget - Maximized Size */
+#chatbot-widget {
+    width: 500px;  /* Increased from 350px */
+    height: 600px; /* Added fixed height for larger view */
+}
+
+/* Chatbot Body (message area) */
+#chatbot-body {
+    height: 400px; /* Increased from 300px */
+}
+
+/* Chatbot Input Area */
+#chatbot-input {
+    padding: 12px 15px; /* Larger input field */
+    font-size: 14px;    /* Slightly larger text */
+}
+
+/* Chatbot Toggle Button */
+#chatbot-toggle {
+    width: 70px;  /* Larger toggle button */
+    height: 70px;
+}
+
+/* Message Bubbles */
+#chatbot-messages div {
+    max-width: 85%; /* Wider message bubbles */
+    padding: 12px;  /* More padding in messages */
+    margin-bottom: 15px; /* More space between messages */
+}
+
+/* Quick Question Buttons */
+.quick-question {
+    padding: 8px 15px; /* Larger quick reply buttons */
+    margin: 5px;       /* More space between buttons */
+    font-size: 13px;   /* Slightly larger text */
+}
+/* Make text more readable */
+#chatbot-messages p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Larger header */
+#chatbot-widget > div:first-child {
+    padding: 18px 15px;
+    font-size: 16px;
+}
+
+/* Larger send button */
+#chatbot-send {
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+}
+</style>
+
+</head>
+<body class="animsition" >
+	
+	<!-- Header -->
+	<header>
+		<!-- Header desktop -->
+		<div class="container-menu-desktop">
+			<!-- Topbar -->
+			
+
+			<div class="wrap-menu-desktop">
+				<nav class="limiter-menu-desktop container">
+					
+					<!-- Logo desktop -->		
+					<a href="http://127.0.0.1:5000/index" class="logo">
+						<img src="static/images/icons/Try-Buy.png" alt="IMG-LOGO">
+					</a>
+
+					<!-- Menu desktop -->
+					<div class="menu-desktop">
+						<ul class="main-menu">
+							<li class="active-menu">
+								<a href="http://127.0.0.1:5000/index" style="color: black;">Home</a>
+							</li>
+
+							<li>
+								<a href="http://127.0.0.1:5000/product" style="color: black;">Shop</a>
+							</li>
+
+							<li>
+								<a href="http://127.0.0.1:5000/features"style="color: black;">Upcoming Features</a>
+							</li>
+
+							<li>
+								<a href="http://127.0.0.1:5000/about" style="color: black;">About</a>
+							</li>
+
+							<li>
+								<a href="http://127.0.0.1:5000/contact" style="color: black;">Contact</a>
+							</li>
+						</ul>
+					</div>	
+			<!-- Icon header -->
+			<div class="wrap-icon-header flex-w flex-r-m m-r-15">
+				<form>
+					<p><input type="button" id= "check_out"  class="button" value="Try & checkout"></p>			
+				</form>
+		
+
+			</div>
+
+			</div>
+					
+				</nav>
+			</div>	
+		</div>
+
+		<!-- Header Mobile -->
+		<div class="wrap-header-mobile">
+			<!-- Logo moblie -->		
+			<div class="logo-mobile">
+				<a href="http://127.0.0.1:5000/index"><img src="static/images/icons/Try-Buy.png" alt="IMG-LOGO"></a>
+			</div>
+
+			<!-- Button show menu -->
+			<div class="btn-show-menu-mobile hamburger hamburger--squeeze">
+				<span class="hamburger-box">
+					<span class="hamburger-inner"></span>
+				</span>
+			</div>
+		</div>
+
+
+		<!-- Menu Mobile -->
+		<div class="menu-mobile">
+			
+			<ul class="main-menu-m">
+				<li>
+					<a href="http://127.0.0.1:5000/index">Home</a>
+				</li>
+
+				<li>
+					<a href="http://127.0.0.1:5000/product">Shop</a>
+				</li>
+
+				<li>
+					<a href="http://127.0.0.1:5000/features">Upcoming Features</a>
+				</li>
+
+				<li>
+					<a href="http://127.0.0.1:5000/about">About</a>
+				</li>
+
+				<li>
+					<a href="http://127.0.0.1:5000/contact">Contact</a>
+				</li>
+			</ul>
+		</div>
+
+		</header>
+	
+	
+	<!-- Product -->
+	<div class="bg0 m-t-23 p-b-140" style=" margin-top: 0px;">
+		<div class="container">
+			<div class="flex-w flex-sb-m p-b-52">
+				<div class="flex-w flex-l-m filter-tope-group m-tb-10" style=" margin-top: 100px;">
+					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 how-active1" data-filter="*">
+						All Products
+					</button>
+
+					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".women">
+						Women
+					</button>
+
+					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".men">
+						Men
+					</button>
+
+				</div>
+			</div>
+
+			<div class="row isotope-grid">
+				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item men">
+					<!-- Block2 -->
+					<div class="block2">
+						<div class="block2-pic hov-img0">
+							<img src="static/images/t-shirts/modal-1.png" alt="IMG-PRODUCT">
+
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
+						</div>
+
+						<div class="block2-txt flex-w flex-t p-t-14">
+							<div class="block2-txt-child1 flex-col-l ">
+									White T-Shirt for Man
+
+								<span class="stext-105 cl3">
+									Rs 235.64
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
+					<!-- Block2 -->
+					<div class="block2">
+						<div class="block2-pic hov-img0">
+							<img src="static/images/t-shirts/modal-2.png">
+
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal2">
+								Quick View
+							</a>
+						</div>
+
+						<div class="block2-txt flex-w flex-t p-t-14">
+							<div class="block2-txt-child1 flex-col-l ">
+									Pink T-shirt for Woman
+							
+								<span class="stext-105 cl3">
+									Rs 125.31
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item men">
+					<!-- Block2 -->
+					<div class="block2">
+						<div class="block2-pic hov-img0">
+							<img src="static/images/t-shirts/modal-3.png" alt="IMG-PRODUCT">
+
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal3">
+								Quick View
+							</a>
+						</div>
+
+						<div class="block2-txt flex-w flex-t p-t-14">
+							<div class="block2-txt-child1 flex-col-l ">
+									Red T-Shirt for Man 
+							
+								<span class="stext-105 cl3">
+									Rs 125.50
+								</span>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
+					<!-- Block2 -->
+					<div class="block2">
+						<div class="block2-pic hov-img0">
+							<img src="static/images/t-shirts/modal-4.png" alt="IMG-PRODUCT">
+
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal4">
+								Quick View
+							</a>
+						</div>
+
+						<div class="block2-txt flex-w flex-t p-t-14">
+							<div class="block2-txt-child1 flex-col-l ">
+								Purple T-shirt for Woman
+								<span class="stext-105 cl3">
+									Rs 175.00
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item men">
+					<!-- Block2 -->
+					<div class="block2">
+						<div class="block2-pic hov-img0">
+							<img src="static/images/t-shirts/modal-5.png" alt="IMG-PRODUCT">
+
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal5">
+								Quick View
+							</a>
+						</div>
+
+						<div class="block2-txt flex-w flex-t p-t-14">
+							<div class="block2-txt-child1 flex-col-l ">
+									Orange T-shirt for Men
+
+								<span class="stext-105 cl3">
+									Rs 134.75
+								</span>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
+					<!-- Block2 -->
+					<div class="block2">
+						<div class="block2-pic hov-img0">
+							<img src="static/images/t-shirts/modal-6.png" alt="IMG-PRODUCT">
+
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal6">
+								Quick View
+							</a>
+						</div>
+
+						<div class="block2-txt flex-w flex-t p-t-14">
+							<div class="block2-txt-child1 flex-col-l ">
+									Golden One Piece 
+								
+								<span class="stext-105 cl3">
+									Rs 2193.20
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
+					<!-- Block2 -->
+					<div class="block2">
+						<div class="block2-pic hov-img0">
+							<img src="static/images/model-7-only-t-shirt.jpg" alt="IMG-PRODUCT">
+
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal7">
+								Quick View
+							</a>
+						</div>
+
+						<div class="block2-txt flex-w flex-t p-t-14">
+							<div class="block2-txt-child1 flex-col-l ">
+									Light Pink Sport T-shirt for Woman
+								
+								<span class="stext-105 cl3">
+									Rs 252.66
+								</span>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
+					<!-- Block2 -->
+					<div class="block2">
+						<div class="block2-pic hov-img0">
+							<img src="static/images/Tops4/15.png" alt="IMG-PRODUCT">
+
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal8">
+								Quick View
+							</a>
+						</div>
+
+						<div class="block2-txt flex-w flex-t p-t-14">
+							<div class="block2-txt-child1 flex-col-l ">
+									Grey T-shirt
+
+								<span class="stext-105 cl3">
+									Rs 418.96
+								</span>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
+					<!-- Block2 -->
+					<div class="block2">
+						<div class="block2-pic hov-img0">
+							<img src="static/images/Tops4/2.png" alt="IMG-PRODUCT">
+
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal9">
+								Quick View
+							</a>
+						</div>
+
+						<div class="block2-txt flex-w flex-t p-t-14">
+							<div class="block2-txt-child1 flex-col-l ">
+								 Pink T-shirt for Woman
+								<span class="stext-105 cl3">
+									Rs 375.00
+								</span>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
+					<!-- Block2 -->
+					<div class="block2">
+						<div class="block2-pic hov-img0">
+							<img src="static/images/model-10-only-one piece.jpg" alt="IMG-PRODUCT">
+
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal10">
+								Quick View
+							</a>
+						</div>
+
+						<div class="block2-txt flex-w flex-t p-t-14">
+							<div class="block2-txt-child1 flex-col-l ">
+									Red One Piece
+
+								<span class="stext-105 cl3">
+									Rs 3525.85
+								</span>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
+					<!-- Block2 -->
+					<div class="block2">
+						<div class="block2-pic hov-img0">
+							<img src="static/images/Frocks5/3.png" alt="IMG-PRODUCT">
+
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal11">
+								Quick View
+							</a>
+						</div>
+
+						<div class="block2-txt flex-w flex-t p-t-14">
+							<div class="block2-txt-child1 flex-col-l ">
+									One Piece 
+
+								<span class="stext-105 cl3">
+									Rs 4563.16
+								</span>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
+					<!-- Block2 -->
+					<div class="block2">
+						<div class="block2-pic hov-img0">
+							<img src="static/images/Tops4/16.png" alt="IMG-PRODUCT" alt="IMG-PRODUCT">
+
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal12">
+								Quick View
+							</a>
+						</div>
+
+						<div class="block2-txt flex-w flex-t p-t-14">
+							<div class="block2-txt-child1 flex-col-l ">
+									Red T-Shirt for Woman
+								<span class="stext-105 cl3">
+									Rs 263.15
+								</span>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+		
+
+	<!-- Footer -->
+	<footer class="bg3 p-t-75 p-b-32">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 col-lg-3 p-b-50">
+					<h4 class="stext-301 cl0 p-b-30">
+						Categories
+						
+					</h4>
+
+					<ul>
+						<li class="p-b-10">
+							<a href="http://127.0.0.1:5000/product" class="stext-107 cl7 hov-cl1 trans-04">
+								Women
+							</a>
+						</li>
+
+						<li class="p-b-10">
+							<a href="http://127.0.0.1:5000/product" class="stext-107 cl7 hov-cl1 trans-04">
+								Men
+							</a>
+						</li>
+
+					</ul>
+				</div>
+
+				<div class="col-sm-6 col-lg-3 p-b-50">
+					<h4 class="stext-301 cl0 p-b-30">
+						Company
+					</h4>
+
+					<ul>
+						<li class="p-b-10">
+							<a href="http://127.0.0.1:5000/about" class="stext-107 cl7 hov-cl1 trans-04">
+								About Us
+							</a>
+						</li>
+
+						<li class="p-b-10">
+							<a href="http://127.0.0.1:5000/features" class="stext-107 cl7 hov-cl1 trans-04">
+								Upcoming Features
+							</a>
+						</li>
+
+					</ul>
+				</div>
+
+				<div class="col-sm-6 col-lg-3 p-b-50">
+					<h4 class="stext-301 cl0 p-b-30">
+						GET IN TOUCH
+					</h4>
+					<ul>
+						<li class="p-b-10">
+							<a href="http://127.0.0.1:5000/contact" class="stext-107 cl7 hov-cl1 trans-04">
+								Contact Us
+							</a>
+						</li>
+					</ul>
+
+					<p class="stext-107 cl7 size-201">
+						Any questions? Let us know <br>DYPSOET <br>Lohegaon, <br>Dy Patil Technical Campus, <br>Pune, Maharashtra, <br> INDIA<br>97653 23502
+					</p>
+
+
+					<div class="p-t-27">
+					
+							<i class="fa fa-facebook"></i>
+						&nbsp; 	&nbsp;
+							<i class="fa fa-instagram"></i>
+						&nbsp; &nbsp;
+							<i class="fa fa-pinterest-p"></i>
+						
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-lg-3 p-b-50">
+					<h4 class="stext-301 cl0 p-b-30">
+						Newsletter
+					</h4>
+
+					<form action="registration.php" method="POST">
+						<div class="wrap-input1 w-full p-b-4">
+							<input class="input1 bg-none plh1 stext-107 cl7" type="email" name="email" placeholder="email@example.com" pattern="[a-z0-9._%+-]+@[gmail,yahoo,icloud,charusat]+\.[com]{2,}$|[a-z0-9._%+-]+@[gmail,yahoo,icloud,charusat]+\.[edu,com,co]+\.[com,in]{2,}">
+							<div class="focus-input1 trans-04"></div>
+						</div>
+
+						<div class="p-t-18">
+							<button type="submit" class="flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04">
+								Subscribe
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div class="p-t-40">
+				<div class="flex-c-m flex-w p-b-18">
+					<a href="#" class="m-all-1">
+						<img src="static/images/icons/icon-pay-01.png" alt="ICON-PAY">
+					</a>
+
+					<a href="#" class="m-all-1">
+						<img src="static/images/icons/icon-pay-02.png" alt="ICON-PAY">
+					</a>
+
+					<a href="#" class="m-all-1">
+						<img src="static/images/icons/icon-pay-03.png" alt="ICON-PAY">
+					</a>
+
+					<a href="#" class="m-all-1">
+						<img src="static/images/icons/icon-pay-04.png" alt="ICON-PAY">
+					</a>
+
+					<a href="#" class="m-all-1">
+						<img src="static/images/icons/icon-pay-05.png" alt="ICON-PAY">
+					</a>
+				</div>
+
+				
+			</div>
+		</div>
+	</footer>
+
+
+	<!-- Back to top -->
+	<div class="btn-back-to-top" id="myBtn">
+		<span class="symbol-btn-back-to-top">
+			<i class="zmdi zmdi-chevron-up"></i>
+		</span>
+	</div>
+
+	<!-- Modal1 -->
+	<div class="wrap-modal1 js-modal1 p-t-60 p-b-20">
+		<div class="overlay-modal1 js-hide-modal1"></div>
+
+		<div class="container">
+			<div class="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent">
+				<button class="how-pos3 hov3 trans-04 js-hide-modal1">
+					<img src="static/images/icons/icon-close.png" alt="CLOSE">
+				</button>
+
+				<div class="row">
+					<div class="col-md-6 col-lg-7 p-b-30">
+						<div class="p-l-25 p-r-30 p-lr-0-lg">
+							<div class="wrap-slick3 flex-sb flex-w">
+								<div class="wrap-slick3-dots"></div>
+								<div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
+
+								<div class="slick3 gallery-lb">
+									<div class="item-slick3" data-thumb="static/images/model-1.jpg">
+										<div class="wrap-pic-w pos-relative">
+											<img src="static/images/model-1.jpg" alt="IMG-PRODUCT">
+
+											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="static/images/model-1.jpg">
+												<i class="fa fa-expand"></i>
+											</a>
+										</div>
+									</div>
+
+									<div class="item-slick3" data-thumb="static/images/model-1-back.jpg">
+										<div class="wrap-pic-w pos-relative">
+											<img src="static/images/model-1-back.jpg" alt="IMG-PRODUCT">
+
+											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="static/images/model-1-back.jpg">
+												<i class="fa fa-expand"></i>
+											</a>
+										</div>
+									</div>
+
+									<div class="item-slick3" data-thumb="static/images/t-shirts/modal-1.png">
+										<div class="wrap-pic-w pos-relative">
+											<img src="static/images/t-shirts/modal-1.png" alt="IMG-PRODUCT">
+
+											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="static/images/t-shirts/modal-1.png">
+												<i class="fa fa-expand"></i>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-md-6 col-lg-5 p-b-30">
+						<div class="p-r-50 p-t-5 p-lr-0-lg">
+							<h4 class="mtext-105 cl2 js-name-detail p-b-14">
+								White T-shirt For Man
+							</h4>
+							
+
+							<span class="mtext-106 cl2">
+								Rs 235.64
+							</span>
+							<!-- Added Size Chart Section -->
+							<div class="size-chart-section p-t-20">
+								<h5 class="mtext-108 cl2 p-b-10">
+									Select Size
+								</h5>
+								<div class="flex-w flex-r-m p-b-10">
+									<div class="size-option m-r-10">
+										<input type="radio" id="size-s-1" name="size-1" value="S" class="size-input">
+										<label for="size-s-1" class="size-label">S</label>
+									</div>
+									<div class="size-option m-r-10">
+										<input type="radio" id="size-m-1" name="size-1" value="M" class="size-input">
+										<label for="size-m-1" class="size-label">M</label>
+									</div>
+									<div class="size-option m-r-10">
+										<input type="radio" id="size-l-1" name="size-1" value="L" class="size-input">
+										<label for="size-l-1" class="size-label">L</label>
+									</div>
+									<div class="size-option">
+										<input type="radio" id="size-xl-1" name="size-1" value="XL" class="size-input">
+										<label for="size-xl-1" class="size-label">XL</label>
+									</div>
+								</div>
+								<a href="#" class="size-chart-link stext-101 cl5" data-toggle="modal" data-target="#sizeChartModal1">
+									View Size Chart
+								</a>
+							</div>
+								
+								<form>
+									<p>
+										<input type="button" 
+											   onclick="addToCart('static/images/Tops4/4.png')" 
+											   value="Add to cart" />
+									</p>
+									
+								</form>		
+								
+
+								
+								
+							<!--  -->
+							<div class="flex-w flex-m p-l-100 p-t-40 respon7">
+
+								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Facebook">
+									<i class="fa fa-facebook"></i>
+								</a>
+
+								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Twitter">
+									<i class="fa fa-twitter"></i>
+								</a>
+
+								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Google Plus">
+									<i class="fa fa-google-plus"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Size Chart Modal for Modal 1 -->
+		<div class="modal fade" id="sizeChartModal1" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Size Chart</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="table-responsive">
+							<table class="table table-bordered">
+								<thead>
+									<tr>
+										<th>Size</th>
+										<th>Chest (in)</th>
+										<th>Waist (in)</th>
+										<th>Length (in)</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>S</td>
+										<td>34-36</td>
+										<td>28-30</td>
+										<td>26</td>
+									</tr>
+									<tr>
+										<td>M</td>
+										<td>38-40</td>
+										<td>32-34</td>
+										<td>27</td>
+									</tr>
+									<tr>
+										<td>L</td>
+										<td>42-44</td>
+										<td>36-38</td>
+										<td>28</td>
+									</tr>
+									<tr>
+										<td>XL</td>
+										<td>46-48</td>
+										<td>40-42</td>
+										<td>29</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal2 -->
+	<div class="wrap-modal2 js-modal2 p-t-60 p-b-20">
+		<div class="overlay-modal2 js-hide-modal2"></div>
+
+		<div class="container">
+			<div class="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent">
+				<button class="how-pos3 hov3 trans-04 js-hide-modal2">
+					<img src="static/images/icons/icon-close.png" alt="CLOSE">
+				</button>
+
+				<div class="row">
+					<div class="col-md-6 col-lg-7 p-b-30">
+						<div class="p-l-25 p-r-30 p-lr-0-lg">
+							<div class="wrap-slick3 flex-sb flex-w">
+								<div class="wrap-slick3-dots"></div>
+								<div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
+
+								<div class="slick3 gallery-lb">
+									<div class="item-slick3" data-thumb="static/images/model-2.jpg">
+										<div class="wrap-pic-w pos-relative">
+											<img src="static/images/model-2.jpg" alt="IMG-PRODUCT">
+
+											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="static/images/model-2.jpg">
+												<i class="fa fa-expand"></i>
+											</a>
+										</div>
+									</div>
+
+									<div class="item-slick3" data-thumb="static/images/model-2-back.jpg">
+										<div class="wrap-pic-w pos-relative">
+											<img src="static/images/model-2-back.jpg" alt="IMG-PRODUCT">
+
+											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="static/images/model-2-back.jpg">
+												<i class="fa fa-expand"></i>
+											</a>
+										</div>
+									</div>
+
+									<div class="item-slick3" data-thumb="static/images/t-shirts/modal-2.png">
+										<div class="wrap-pic-w pos-relative">
+											<img src="static/images/t-shirts/modal-2.png" alt="IMG-PRODUCT">
+
+											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="static/images/t-shirts/modal-2.png">
+												<i class="fa fa-expand"></i>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-md-6 col-lg-5 p-b-30">
+						<div class="p-r-50 p-t-5 p-lr-0-lg">
+							<h4 class="mtext-105 cl2 js-name-detail p-b-14">
+								Pink T-shirt for Woman
+							</h4>
+
+							<span class="mtext-106 cl2">
+								Rs. 125.31
+							</span>
+							<!-- Added Size Chart Section -->
+							<div class="size-chart-section p-t-20">
+								<h5 class="mtext-108 cl2 p-b-10">
+									Select Size
+								</h5>
+								<div class="flex-w flex-r-m p-b-10">
+									<div class="size-option m-r-10">
+										<input type="radio" id="size-s-2" name="size-2" value="S" class="size-input">
+										<label for="size-s-2" class="size-label">S</label>
+									</div>
+									<div class="size-option m-r-10">
+										<input type="radio" id="size-m-2" name="size-2" value="M" class="size-input">
+										<label for="size-m-2" class="size-label">M</label>
+									</div>
+									<div class="size-option m-r-10">
+										<input type="radio" id="size-l-2" name="size-2" value="L" class="size-input">
+										<label for="size-l-2" class="size-label">L</label>
+									</div>
+									<div class="size-option">
+										<input type="radio" id="size-xl-2" name="size-2" value="XL" class="size-input">
+										<label for="size-xl-2" class="size-label">XL</label>
+									</div>
+								</div>
+								<a href="#" class="size-chart-link stext-101 cl5" data-toggle="modal" data-target="#sizeChartModal2">
+									View Size Chart
+								</a>
+							</div>
+							
+								<form ><p><input type=button onclick="addToCart('static/images/Tops4/7.png')" value="Add to cart" /></p></form>
+								
+								
+							<!--  -->
+							<div class="flex-w flex-m p-l-100 p-t-40 respon7">
+
+								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Facebook">
+									<i class="fa fa-facebook"></i>
+								</a>
+
+								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Twitter">
+									<i class="fa fa-twitter"></i>
+								</a>
+
+								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Google Plus">
+									<i class="fa fa-google-plus"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Size Chart Modal for Modal 2 -->
+		<div class="modal fade" id="sizeChartModal2" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Size Chart</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="table-responsive">
+							<table class="table table-bordered">
+								<thead>
+									<tr>
+										<th>Size</th>
+										<th>Chest (in)</th>
+										<th>Waist (in)</th>
+										<th>Length (in)</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>S</td>
+										<td>34-36</td>
+										<td>28-30</td>
+										<td>26</td>
+									</tr>
+									<tr>
+										<td>M</td>
+										<td>38-40</td>
+										<td>32-34</td>
+										<td>27</td>
+									</tr>
+									<tr>
+										<td>L</td>
+										<td>42-44</td>
+										<td>36-38</td>
+										<td>28</td>
+									</tr>
+									<tr>
+										<td>XL</td>
+										<td>46-48</td>
+										<td>40-42</td>
+										<td>29</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+    <!-- Modal3 -->
+<div class="wrap-modal3 js-modal3 p-t-60 p-b-20">
+    <div class="overlay-modal3 js-hide-modal3"></div>
+
+    <div class="container">
+        <div class="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent">
+            <button class="how-pos3 hov3 trans-04 js-hide-modal3">
+                <img src="static/images/icons/icon-close.png" alt="CLOSE">
+            </button>
+
+            <div class="row">
+                <div class="col-md-6 col-lg-7 p-b-30">
+                    <div class="p-l-25 p-r-30 p-lr-0-lg">
+                        <div class="wrap-slick3 flex-sb flex-w">
+                            <div class="wrap-slick3-dots"></div>
+                            <div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
+
+                            <div class="slick3 gallery-lb">
+                                <div class="item-slick3" data-thumb="static/images/model-3.jpg">
+                                    <div class="wrap-pic-w pos-relative">
+                                        <img src="static/images/model-3.jpg" alt="IMG-PRODUCT">
+                                        <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="static/images/model-3.jpg">
+                                            <i class="fa fa-expand"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="item-slick3" data-thumb="static/images/model-3-back.jpg">
+                                    <div class="wrap-pic-w pos-relative">
+                                        <img src="static/images/model-3-back.jpg" alt="IMG-PRODUCT">
+                                        <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="static/images/model-3-back.jpg">
+                                            <i class="fa fa-expand"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="item-slick3" data-thumb="static/images/t-shirts/modal-3.png">
+                                    <div class="wrap-pic-w pos-relative">
+                                        <img src="static/images/t-shirts/modal-3.png" alt="IMG-PRODUCT">
+                                        <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="static/images/t-shirts/modal-3.png">
+                                            <i class="fa fa-expand"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-5 p-b-30">
+                    <div class="p-r-50 p-t-5 p-lr-0-lg">
+                        <h4 class="mtext-105 cl2 js-name-detail p-b-14">
+                            Red T-Shirt for Man
+                        </h4>
+
+                        <span class="mtext-106 cl2">
+                            Rs. 125.50
+                        </span>
+
+                        <!-- Added Size Chart Section -->
+                        <div class="size-chart-section p-t-20">
+                            <h5 class="mtext-108 cl2 p-b-10">
+                                Select Size
+                            </h5>
+                            <div class="flex-w flex-r-m p-b-10">
+                                <div class="size-option m-r-10">
+                                    <input type="radio" id="size-s-3" name="size-3" value="S" class="size-input">
+                                    <label for="size-s-3" class="size-label">S</label>
+                                </div>
+                                <div class="size-option m-r-10">
+                                    <input type="radio" id="size-m-3" name="size-3" value="M" class="size-input">
+                                    <label for="size-m-3" class="size-label">M</label>
+                                </div>
+                                <div class="size-option m-r-10">
+                                    <input type="radio" id="size-l-3" name="size-3" value="L" class="size-input">
+                                    <label for="size-l-3" class="size-label">L</label>
+                                </div>
+                                <div class="size-option">
+                                    <input type="radio" id="size-xl-3" name="size-3" value="XL" class="size-input">
+                                    <label for="size-xl-3" class="size-label">XL</label>
+                                </div>
+                            </div>
+                            <a href="#" class="size-chart-link stext-101 cl5" data-toggle="modal" data-target="#sizeChartModal3">
+                                View Size Chart
+                            </a>
+                        </div>
+
+                        <form><p><input type=button onclick="addToCart('static/images/Tops4/6.png')" value="Add to cart" /></p></form>
+
+                        <!-- Social Media Links -->
+                        <div class="flex-w flex-m p-l-100 p-t-40 respon7">
+                            <a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Facebook">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                            <a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Twitter">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                            <a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Google Plus">
+                                <i class="fa fa-google-plus"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Size Chart Modal for Modal 3 -->
+    <div class="modal fade" id="sizeChartModal3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Size Chart</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Size</th>
+                                    <th>Chest (in)</th>
+                                    <th>Waist (in)</th>
+                                    <th>Length (in)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>S</td>
+                                    <td>34-36</td>
+                                    <td>28-30</td>
+                                    <td>26</td>
+                                </tr>
+                                <tr>
+                                    <td>M</td>
+                                    <td>38-40</td>
+                                    <td>32-34</td>
+                                    <td>27</td>
+                                </tr>
+                                <tr>
+                                    <td>L</td>
+                                    <td>42-44</td>
+                                    <td>36-38</td>
+                                    <td>28</td>
+                                </tr>
+                                <tr>
+                                    <td>XL</td>
+                                    <td>46-48</td>
+                                    <td>40-42</td>
+                                    <td>29</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+	<!-- Modal4 -->
+<div class="wrap-modal4 js-modal4 p-t-60 p-b-20">
+    <div class="overlay-modal4 js-hide-modal4"></div>
+
+    <div class="container">
+        <div class="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent">
+            <button class="how-pos3 hov3 trans-04 js-hide-modal4">
+                <img src="static/images/icons/icon-close.png" alt="CLOSE">
+            </button>
+
+            <div class="row">
+                <div class="col-md-6 col-lg-7 p-b-30">
+                    <div class="p-l-25 p-r-30 p-lr-0-lg">
+                        <div class="wrap-slick3 flex-sb flex-w">
+                            <div class="wrap-slick3-dots"></div>
+                            <div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
+
+                            <div class="slick3 gallery-lb">
+                                <div class="item-slick3" data-thumb="static/images/model-4.jpg">
+                                    <div class="wrap-pic-w pos-relative">
+                                        <img src="static/images/model-4.jpg" alt="IMG-PRODUCT">
+                                        <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="static/images/model-4.jpg">
+                                            <i class="fa fa-expand"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="item-slick3" data-thumb="static/images/model-4-back.jpg">
+                                    <div class="wrap-pic-w pos-relative">
+                                        <img src="static/images/model-4-back.jpg" alt="IMG-PRODUCT">
+                                        <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="static/images/model-4-back.jpg">
+                                            <i class="fa fa-expand"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="item-slick3" data-thumb="static/images/t-shirts/modal-4.png">
+                                    <div class="wrap-pic-w pos-relative">
+                                        <img src="static/images/t-shirts/modal-4.png" alt="IMG-PRODUCT">
+                                        <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="static/images/t-shirts/modal-4.png">
+                                            <i class="fa fa-expand"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-5 p-b-30">
+                    <div class="p-r-50 p-t-5 p-lr-0-lg">
+                        <h4 class="mtext-105 cl2 js-name-detail p-b-14">
+                            Purple T-shirt for Woman
+                        </h4>
+
+                        <span class="mtext-106 cl2">
+                            Rs. 175.00
+                        </span>
+
+                        <!-- Added Size Chart Section -->
+                        <div class="size-chart-section p-t-20">
+                            <h5 class="mtext-108 cl2 p-b-10">
+                                Select Size
+                            </h5>
+                            <div class="flex-w flex-r-m p-b-10">
+                                <div class="size-option m-r-10">
+                                    <input type="radio" id="size-s-4" name="size-4" value="S" class="size-input">
+                                    <label for="size-s-4" class="size-label">S</label>
+                                </div>
+                                <div class="size-option m-r-10">
+                                    <input type="radio" id="size-m-4" name="size-4" value="M" class="size-input">
+                                    <label for="size-m-4" class="size-label">M</label>
+                                </div>
+                                <div class="size-option m-r-10">
+                                    <input type="radio" id="size-l-4" name="size-4" value="L" class="size-input">
+                                    <label for="size-l-4" class="size-label">L</label>
+                                </div>
+                                <div class="size-option">
+                                    <input type="radio" id="size-xl-4" name="size-4" value="XL" class="size-input">
+                                    <label for="size-xl-4" class="size-label">XL</label>
+                                </div>
+                            </div>
+                            <a href="#" class="size-chart-link stext-101 cl5" data-toggle="modal" data-target="#sizeChartModal4">
+                                View Size Chart
+                            </a>
+                        </div>
+
+                        <form><p><input type=button onclick="addToCart('static/images/Tops4/12.png')" value="Add to cart" /></p></form>
+
+                        <!-- Social Media Links -->
+                        <div class="flex-w flex-m p-l-100 p-t-40 respon7">
+                            <a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Facebook">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                            <a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Twitter">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                            <a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Google Plus">
+                                <i class="fa fa-google-plus"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Size Chart Modal for Modal 4 -->
+    <div class="modal fade" id="sizeChartModal4" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Size Chart</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Size</th>
+                                    <th>Chest (in)</th>
+                                    <th>Waist (in)</th>
+                                    <th>Length (in)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>S</td>
+                                    <td>34-36</td>
+                                    <td>28-30</td>
+                                    <td>26</td>
+                                </tr>
+                                <tr>
+                                    <td>M</td>
+                                    <td>38-40</td>
+                                    <td>32-34</td>
+                                    <td>27</td>
+                                </tr>
+                                <tr>
+                                    <td>L</td>
+                                    <td>42-44</td>
+                                    <td>36-38</td>
+                                    <td>28</td>
+                                </tr>
+                                <tr>
+                                    <td>XL</td>
+                                    <td>46-48</td>
+                                    <td>40-42</td>
+                                    <td>29</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+	<!-- Modal5 -->
+	<div class="wrap-modal5 js-modal5 p-t-60 p-b-20">
+		<div class="overlay-modal5 js-hide-modal5"></div>
+
+		<div class="container">
+			<div class="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent">
+				<button class="how-pos3 hov3 trans-04 js-hide-modal5">
+					<img src="static/images/icons/icon-close.png" alt="CLOSE">
+				</button>
+
+				<div class="row">
+					<div class="col-md-6 col-lg-7 p-b-30">
+						<div class="p-l-25 p-r-30 p-lr-0-lg">
+							<div class="wrap-slick3 flex-sb flex-w">
+								<div class="wrap-slick3-dots"></div>
+								<div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
+
+								<div class="slick3 gallery-lb">
+									<div class="item-slick3" data-thumb="static/images/model-5.jpg">
+										<div class="wrap-pic-w pos-relative">
+											<img src="static/images/model-5.jpg" alt="IMG-PRODUCT">
+
+											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="static/images/model-5.jpg">
+												<i class="fa fa-expand"></i>
+											</a>
+										</div>
+									</div>
+
+									<div class="item-slick3" data-thumb="static/images/model-5-back.jpg">
+										<div class="wrap-pic-w pos-relative">
+											<img src="static/images/model-5-back.jpg" alt="IMG-PRODUCT">
+
+											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="static/images/model-5-back.jpg">
+												<i class="fa fa-expand"></i>
+											</a>
+										</div>
+									</div>
+
+									<div class="item-slick3" data-thumb="static/images/t-shirts/modal-5.png">
+										<div class="wrap-pic-w pos-relative">
+											<img src="static/images/t-shirts/modal-5.png" alt="IMG-PRODUCT">
+
+											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="static/images/t-shirts/modal-5.png">
+												<i class="fa fa-expand"></i>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-md-6 col-lg-5 p-b-30">
+						<div class="p-r-50 p-t-5 p-lr-0-lg">
+							<h4 class="mtext-105 cl2 js-name-detail p-b-14">
+								Orange T-shirt for Man
+							</h4>
+
+							<span class="mtext-106 cl2">
+								Rs. 134.75
+                            </span>
+
+                            <!-- Added Size Chart Section -->
+                        <div class="size-chart-section p-t-20">
+                            <h5 class="mtext-108 cl2 p-b-10">
+                                Select Size
+                            </h5>
+                            <div class="flex-w flex-r-m p-b-10">
+                                <div class="size-option m-r-10">
+                                    <input type="radio" id="size-s-5" name="size-5" value="S" class="size-input">
+                                    <label for="size-s-5-" class="size-label">S</label>
+                                </div>
+                                <div class="size-option m-r-10">
+                                    <input type="radio" id="size-m-5" name="size-5" value="M" class="size-input">
+                                    <label for="size-m-5" class="size-label">M</label>
+                                </div>
+                                <div class="size-option m-r-10">
+                                    <input type="radio" id="size-l-5" name="size-5" value="L" class="size-input">
+                                    <label for="size-l-5" class="size-label">L</label>
+                                </div>
+                                <div class="size-option">
+                                    <input type="radio" id="size-xl-5" name="size-5" value="XL" class="size-input">
+                                    <label for="size-xl-5" class="size-label">XL</label>
+                                </div>
+                            </div>
+                            <a href="#" class="size-chart-link stext-101 cl5" data-toggle="modal" data-target="#sizeChartModal5">
+                                View Size Chart
+                            </a>
+                        </div>
+								<form ><p><input type=button onclick="addToCart('static/images/Tops4/5.png')" value="Add to cart" /></p></form>
+								
+
+														<!--  -->
+							<div class="flex-w flex-m p-l-100 p-t-40 respon7">
+
+								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Facebook">
+									<i class="fa fa-facebook"></i>
+								</a>
+
+								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Twitter">
+									<i class="fa fa-twitter"></i>
+								</a>
+
+								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Google Plus">
+									<i class="fa fa-google-plus"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Size Chart Modal for Modal 4 -->
+		<div class="modal fade" id="sizeChartModal5" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Size Chart</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="table-responsive">
+							<table class="table table-bordered">
+								<thead>
+									<tr>
+										<th>Size</th>
+										<th>Chest (in)</th>
+										<th>Waist (in)</th>
+										<th>Length (in)</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>S</td>
+										<td>34-36</td>
+										<td>28-30</td>
+										<td>26</td>
+									</tr>
+									<tr>
+										<td>M</td>
+										<td>38-40</td>
+										<td>32-34</td>
+										<td>27</td>
+									</tr>
+									<tr>
+										<td>L</td>
+										<td>42-44</td>
+										<td>36-38</td>
+										<td>28</td>
+									</tr>
+									<tr>
+										<td>XL</td>
+										<td>46-48</td>
+										<td>40-42</td>
+										<td>29</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Modal6 -->
+	<div class="wrap-modal6 js-modal6 p-t-60 p-b-20">
+		<div class="overlay-modal6 js-hide-modal6"></div>
+
+		<div class="container">
+			<div class="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent">
+				<button class="how-pos3 hov3 trans-04 js-hide-modal6">
+					<img src="static/images/icons/icon-close.png" alt="CLOSE">
+				</button>
+
+				<div class="row">
+					<div class="col-md-6 col-lg-7 p-b-30">
+						<div class="p-l-25 p-r-30 p-lr-0-lg">
+							<div class="wrap-slick3 flex-sb flex-w">
+								<div class="wrap-slick3-dots"></div>
+								<div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
+
+								<div class="slick3 gallery-lb">
+									<div class="item-slick3" data-thumb="static/images/model-6.jpg">
+										<div class="wrap-pic-w pos-relative">
+											<img src="static/images/model-6.jpg" alt="IMG-PRODUCT">
+
+											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="static/images/model-6.jpg">
+												<i class="fa fa-expand"></i>
+											</a>
+										</div>
+									</div>
+
+									<div class="item-slick3" data-thumb="static/images/model-6-back.jpg">
+										<div class="wrap-pic-w pos-relative">
+											<img src="static/images/model-6-back.jpg" alt="IMG-PRODUCT">
+
+											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="static/images/model-6-back.jpg">
+												<i class="fa fa-expand"></i>
+											</a>
+										</div>
+									</div>
+
+									<div class="item-slick3" data-thumb="static/images/t-shirts/modal-6.png">
+										<div class="wrap-pic-w pos-relative">
+											<img src="static/images/t-shirts/modal-6.png" alt="IMG-PRODUCT">
+
+											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="static/images/t-shirts/modal-6.png">
+												<i class="fa fa-expand"></i>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-md-6 col-lg-5 p-b-30">
+						<div class="p-r-50 p-t-5 p-lr-0-lg">
+							<h4 class="mtext-105 cl2 js-name-detail p-b-14">
+								Golden One Piece
+							</h4>
+
+							<span class="mtext-106 cl2">
+								Rs. 2193.20
+							</span>
+							<!-- Added Size Chart Section -->
+							<div class="size-chart-section p-t-20">
+								<h5 class="mtext-108 cl2 p-b-10">
+									Select Size
+								</h5>
+								<div class="flex-w flex-r-m p-b-10">
+									<div class="size-option m-r-10">
+										<input type="radio" id="size-s-6" name="size-6" value="S" class="size-input">
+										<label for="size-s-6" class="size-label">S</label>
+									</div>
+									<div class="size-option m-r-10">
+										<input type="radio" id="size-m-6" name="size-6" value="M" class="size-input">
+										<label for="size-m-6" class="size-label">M</label>
+									</div>
+									<div class="size-option m-r-10">
+										<input type="radio" id="size-l-6" name="size-6" value="L" class="size-input">
+										<label for="size-l-6" class="size-label">L</label>
+									</div>
+									<div class="size-option">
+										<input type="radio" id="size-xl-6" name="size-6" value="XL" class="size-input">
+										<label for="size-xl-6" class="size-label">XL</label>
+									</div>
+								</div>
+								<a href="#" class="size-chart-link stext-101 cl5" data-toggle="modal" data-target="#sizeChartModal6">
+									View Size Chart
+								</a>
+							</div>
+
+								<form ><p><input type=button onclick="addToCart('static/images/Frocks5/2.png')" value="Add to cart" /></p></form>
+								
+
+							<!--  -->
+							<div class="flex-w flex-m p-l-100 p-t-40 respon7">
+
+								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Facebook">
+									<i class="fa fa-facebook"></i>
+								</a>
+
+								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Twitter">
+									<i class="fa fa-twitter"></i>
+								</a>
+
+								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Google Plus">
+									<i class="fa fa-google-plus"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Size Chart Modal for Modal 6 -->
+		<div class="modal fade" id="sizeChartModal6" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Size Chart</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="table-responsive">
+							<table class="table table-bordered">
+								<thead>
+									<tr>
+										<th>Size</th>
+										<th>Chest (in)</th>
+										<th>Waist (in)</th>
+										<th>Length (in)</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>S</td>
+										<td>34-36</td>
+										<td>28-30</td>
+										<td>26</td>
+									</tr>
+									<tr>
+										<td>M</td>
+										<td>38-40</td>
+										<td>32-34</td>
+										<td>27</td>
+									</tr>
+									<tr>
+										<td>L</td>
+										<td>42-44</td>
+										<td>36-38</td>
+										<td>28</td>
+									</tr>
+									<tr>
+										<td>XL</td>
+										<td>46-48</td>
+										<td>40-42</td>
+										<td>29</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Modal7 -->
+	<div class="wrap-modal7 js-modal7 p-t-60 p-b-20">
+		<div class="overlay-modal7 js-hide-modal7"></div>
+
+		<div class="container">
+			<div class="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent">
+				<button class="how-pos3 hov3 trans-04 js-hide-modal7">
+					<img src="static/images/icons/icon-close.png" alt="CLOSE">
+				</button>
+
+				<div class="row">
+					<div class="col-md-6 col-lg-7 p-b-30">
+						<div class="p-l-25 p-r-30 p-lr-0-lg">
+							<div class="wrap-slick3 flex-sb flex-w">
+								<div class="wrap-slick3-dots"></div>
+								<div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
+
+								<div class="slick3 gallery-lb">
+									<div class="item-slick3" data-thumb="static/images/model-7.jpg">
+										<div class="wrap-pic-w pos-relative">
+											<img src="static/images/model-7.jpg" alt="IMG-PRODUCT">
+
+											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="static/images/model-7.jpg">
+												<i class="fa fa-expand"></i>
+											</a>
+										</div>
+									</div>
+
+									<div class="item-slick3" data-thumb="static/images/model-7-back.jpg">
+										<div class="wrap-pic-w pos-relative">
+											<img src="static/images/model-7-back.jpg" alt="IMG-PRODUCT">
+
+											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="static/images/model-7-back.jpg">
+												<i class="fa fa-expand"></i>
+											</a>
+										</div>
+									</div>
+
+									<div class="item-slick3" data-thumb="static/images/t-shirts/modal-7.png">
+										<div class="wrap-pic-w pos-relative">
+											<img src="static/images/t-shirts/modal-7.png" alt="IMG-PRODUCT">
+
+											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="static/images/t-shirts/modal-7.png">
+												<i class="fa fa-expand"></i>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-md-6 col-lg-5 p-b-30">
+						<div class="p-r-50 p-t-5 p-lr-0-lg">
+							<h4 class="mtext-105 cl2 js-name-detail p-b-14">
+								Light Pink Sport T-Shirt for Woman
+							</h4>
+
+							<span class="mtext-106 cl2">
+								Rs. 252.66
+							</span>
+							<!-- Added Size Chart Section -->
+							<div class="size-chart-section p-t-20">
+								<h5 class="mtext-108 cl2 p-b-10">
+									Select Size
+								</h5>
+								<div class="flex-w flex-r-m p-b-10">
+									<div class="size-option m-r-10">
+										<input type="radio" id="size-s-7" name="size-7" value="S" class="size-input">
+										<label for="size-s-7" class="size-label">S</label>
+									</div>
+									<div class="size-option m-r-10">
+										<input type="radio" id="size-m-7" name="size-7" value="M" class="size-input">
+										<label for="size-m-7" class="size-label">M</label>
+									</div>
+									<div class="size-option m-r-10">
+										<input type="radio" id="size-l-7" name="size-7" value="L" class="size-input">
+										<label for="size-l-7" class="size-label">L</label>
+									</div>
+									<div class="size-option">
+										<input type="radio" id="size-xl-7" name="size-7" value="XL" class="size-input">
+										<label for="size-xl-7" class="size-label">XL</label>
+									</div>
+								</div>
+								<a href="#" class="size-chart-link stext-101 cl5" data-toggle="modal" data-target="#sizeChartModal7">
+									View Size Chart
+								</a>
+							</div>
+								<form ><p><input type=button onclick="addToCart('static/images/Tops4/2.png')" value="Add to cart" /></p></form>
+								
+
+							<!--  -->
+							<div class="flex-w flex-m p-l-100 p-t-40 respon7">
+
+								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Facebook">
+									<i class="fa fa-facebook"></i>
+								</a>
+
+								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Twitter">
+									<i class="fa fa-twitter"></i>
+								</a>
+
+								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Google Plus">
+									<i class="fa fa-google-plus"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Size Chart Modal for Modal 7 -->
+		<div class="modal fade" id="sizeChartModal7" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Size Chart</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="table-responsive">
+							<table class="table table-bordered">
+								<thead>
+									<tr>
+										<th>Size</th>
+										<th>Chest (in)</th>
+										<th>Waist (in)</th>
+										<th>Length (in)</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>S</td>
+										<td>34-36</td>
+										<td>28-30</td>
+										<td>26</td>
+									</tr>
+									<tr>
+										<td>M</td>
+										<td>38-40</td>
+										<td>32-34</td>
+										<td>27</td>
+									</tr>
+									<tr>
+										<td>L</td>
+										<td>42-44</td>
+										<td>36-38</td>
+										<td>28</td>
+									</tr>
+									<tr>
+										<td>XL</td>
+										<td>46-48</td>
+										<td>40-42</td>
+										<td>29</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Modal8 -->
+	<div class="wrap-modal8 js-modal8 p-t-60 p-b-20">
+		<div class="overlay-modal8 js-hide-modal8"></div>
+
+		<div class="container">
+			<div class="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent">
+				<button class="how-pos3 hov3 trans-04 js-hide-modal8">
+					<img src="static/images/icons/icon-close.png" alt="CLOSE">
+				</button>
+
+				<div class="row">
+					<div class="col-md-6 col-lg-7 p-b-30">
+						<div class="p-l-25 p-r-30 p-lr-0-lg">
+							<div class="wrap-slick3 flex-sb flex-w">
+								<div class="wrap-slick3-dots"></div>
+								<div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
+
+								<div class="slick3 gallery-lb">
+									<div class="item-slick3" data-thumb="https://websterink.com/wp-content/uploads/2013/02/Bella-and-Canvas-Missy-Triblend-Scoopneck-T-Shirt-Female-Grey.jpg">
+										<div class="wrap-pic-w pos-relative">
+											<img src="https://websterink.com/wp-content/uploads/2013/02/Bella-and-Canvas-Missy-Triblend-Scoopneck-T-Shirt-Female-Grey.jpg" alt="IMG-PRODUCT">
+
+											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="https://websterink.com/wp-content/uploads/2013/02/Bella-and-Canvas-Missy-Triblend-Scoopneck-T-Shirt-Female-Grey.jpg">
+												<i class="fa fa-expand"></i>
+											</a>
+										</div>
+									</div>
+
+									<div class="item-slick3" data-thumb="https://i.pinimg.com/originals/47/1c/db/471cdba26848e66f6292f204b185a1d8.jpg">
+										<div class="wrap-pic-w pos-relative">
+											<img src="https://i.pinimg.com/originals/47/1c/db/471cdba26848e66f6292f204b185a1d8.jpg" alt="IMG-PRODUCT">
+
+											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="https://i.pinimg.com/originals/47/1c/db/471cdba26848e66f6292f204b185a1d8.jpg">
+												<i class="fa fa-expand"></i>
+											</a>
+										</div>
+									</div>
+
+									<div class="item-slick3" data-thumb="static/images/Tops4/15.png">
+										<div class="wrap-pic-w pos-relative">
+											<img src="static/images/Tops4/15.png" alt="IMG-PRODUCT">
+
+											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="static/images/Tops4/15.png">
+												<i class="fa fa-expand"></i>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-md-6 col-lg-5 p-b-30">
+						<div class="p-r-50 p-t-5 p-lr-0-lg">
+							<h4 class="mtext-105 cl2 js-name-detail p-b-14">
+								Grey T-shirt
+							</h4>
+
+							<span class="mtext-106 cl2">
+								Rs. 418.96
+							</span>
+							<!-- Added Size Chart Section -->
+							<div class="size-chart-section p-t-20">
+								<h5 class="mtext-108 cl2 p-b-10">
+									Select Size
+								</h5>
+								<div class="flex-w flex-r-m p-b-10">
+									<div class="size-option m-r-10">
+										<input type="radio" id="size-s-8" name="size-8" value="S" class="size-input">
+										<label for="size-s-8" class="size-label">S</label>
+									</div>
+									<div class="size-option m-r-10">
+										<input type="radio" id="size-m-8" name="size-8" value="M" class="size-input">
+										<label for="size-m-8" class="size-label">M</label>
+									</div>
+									<div class="size-option m-r-10">
+										<input type="radio" id="size-l-8" name="size-8" value="L" class="size-input">
+										<label for="size-l-8" class="size-label">L</label>
+									</div>
+									<div class="size-option">
+										<input type="radio" id="size-xl-8" name="size-8" value="XL" class="size-input">
+										<label for="size-xl-8" class="size-label">XL</label>
+									</div>
+								</div>
+								<a href="#" class="size-chart-link stext-101 cl5" data-toggle="modal" data-target="#sizeChartModal8">
+									View Size Chart
+								</a>
+							</div>
+								<form ><p><input type=button onclick="addToCart('static/images/Tops4/15.png')" value="Add to cart" /></p></form>
+								
+
+							<!--  -->
+							<div class="flex-w flex-m p-l-100 p-t-40 respon7">
+
+								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Facebook">
+									<i class="fa fa-facebook"></i>
+								</a>
+
+								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Twitter">
+									<i class="fa fa-twitter"></i>
+								</a>
+
+								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Google Plus">
+									<i class="fa fa-google-plus"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Size Chart Modal for Modal 8 -->
+		<div class="modal fade" id="sizeChartModal8" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Size Chart</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="table-responsive">
+							<table class="table table-bordered">
+								<thead>
+									<tr>
+										<th>Size</th>
+										<th>Chest (in)</th>
+										<th>Waist (in)</th>
+										<th>Length (in)</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>S</td>
+										<td>34-36</td>
+										<td>28-30</td>
+										<td>26</td>
+									</tr>
+									<tr>
+										<td>M</td>
+										<td>38-40</td>
+										<td>32-34</td>
+										<td>27</td>
+									</tr>
+									<tr>
+										<td>L</td>
+										<td>42-44</td>
+										<td>36-38</td>
+										<td>28</td>
+									</tr>
+									<tr>
+										<td>XL</td>
+										<td>46-48</td>
+										<td>40-42</td>
+										<td>29</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Modal9 -->
+	<div class="wrap-modal9 js-modal9 p-t-60 p-b-20">
+		<div class="overlay-modal9 js-hide-modal9"></div>
+
+		<div class="container">
+			<div class="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent">
+				<button class="how-pos3 hov3 trans-04 js-hide-modal9">
+					<img src="static/images/icons/icon-close.png" alt="CLOSE">
+				</button>
+
+				<div class="row">
+					<div class="col-md-6 col-lg-7 p-b-30">
+						<div class="p-l-25 p-r-30 p-lr-0-lg">
+							<div class="wrap-slick3 flex-sb flex-w">
+								<div class="wrap-slick3-dots"></div>
+								<div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
+
+								<div class="slick3 gallery-lb">
+									<div class="item-slick3" data-thumb="static/images/model-9.webp">
+										<div class="wrap-pic-w pos-relative">
+											<img src="static/images/model-9.webp" alt="IMG-PRODUCT">
+
+											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="static/images/model-9.webp">
+												<i class="fa fa-expand"></i>
+											</a>
+										</div>
+									</div>
+
+									<div class="item-slick3" data-thumb="static/images/model-7-back.jpg">
+										<div class="wrap-pic-w pos-relative">
+											<img src="static/images/model-7-back.jpg" alt="IMG-PRODUCT">
+
+											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="static/images/model-7-back.jpg">
+												<i class="fa fa-expand"></i>
+											</a>
+										</div>
+									</div>
+
+									<div class="item-slick3" data-thumb="static/images/Tops4/2.png">
+										<div class="wrap-pic-w pos-relative">
+											<img src="static/images/t-shirts/16.png" alt="IMG-PRODUCT">
+
+											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="static/images/Tops4/16.png">
+												<i class="fa fa-expand"></i>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-md-6 col-lg-5 p-b-30">
+						<div class="p-r-50 p-t-5 p-lr-0-lg">
+							<h4 class="mtext-105 cl2 js-name-detail p-b-14">
+								 Pink T-shirt for Woman
+							</h4>
+
+							<span class="mtext-106 cl2">
+								Rs. 375.00
+							</span>
+							<!-- Added Size Chart Section -->
+							<div class="size-chart-section p-t-20">
+								<h5 class="mtext-108 cl2 p-b-10">
+									Select Size
+								</h5>
+								<div class="flex-w flex-r-m p-b-10">
+									<div class="size-option m-r-10">
+										<input type="radio" id="size-s-9" name="size-9" value="S" class="size-input">
+										<label for="size-s-9" class="size-label">S</label>
+									</div>
+									<div class="size-option m-r-10">
+										<input type="radio" id="size-m-9" name="size-9" value="M" class="size-input">
+										<label for="size-m-9" class="size-label">M</label>
+									</div>
+									<div class="size-option m-r-10">
+										<input type="radio" id="size-l-9" name="size-9" value="L" class="size-input">
+										<label for="size-l-9" class="size-label">L</label>
+									</div>
+									<div class="size-option">
+										<input type="radio" id="size-xl-9" name="size-9" value="XL" class="size-input">
+										<label for="size-xl-9" class="size-label">XL</label>
+									</div>
+								</div>
+								<a href="#" class="size-chart-link stext-101 cl5" data-toggle="modal" data-target="#sizeChartModal9">
+									View Size Chart
+								</a>
+							</div>
+
+								<form ><p><input type=button onclick="addToCart('static/images/Tops4/2.png')" value="Add to cart" /></p></form>
+							
+
+							<div class="flex-w flex-m p-l-100 p-t-40 respon7">
+								
+								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Facebook">
+									<i class="fa fa-facebook"></i>
+								</a>
+
+								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Twitter">
+									<i class="fa fa-twitter"></i>
+								</a>
+
+								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Google Plus">
+									<i class="fa fa-google-plus"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Size Chart Modal for Modal 9 -->
+		<div class="modal fade" id="sizeChartModal9" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Size Chart</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="table-responsive">
+							<table class="table table-bordered">
+								<thead>
+									<tr>
+										<th>Size</th>
+										<th>Chest (in)</th>
+										<th>Waist (in)</th>
+										<th>Length (in)</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>S</td>
+										<td>34-36</td>
+										<td>28-30</td>
+										<td>26</td>
+									</tr>
+									<tr>
+										<td>M</td>
+										<td>38-40</td>
+										<td>32-34</td>
+										<td>27</td>
+									</tr>
+									<tr>
+										<td>L</td>
+										<td>42-44</td>
+										<td>36-38</td>
+										<td>28</td>
+									</tr>
+									<tr>
+										<td>XL</td>
+										<td>46-48</td>
+										<td>40-42</td>
+										<td>29</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Modal10 -->
+	<div class="wrap-modal10 js-modal10 p-t-60 p-b-20">
+		<div class="overlay-modal10 js-hide-modal10"></div>
+
+		<div class="container">
+			<div class="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent">
+				<button class="how-pos3 hov3 trans-04 js-hide-modal10">
+					<img src="static/images/icons/icon-close.png" alt="CLOSE">
+				</button>
+
+				<div class="row">
+					<div class="col-md-6 col-lg-7 p-b-30">
+						<div class="p-l-25 p-r-30 p-lr-0-lg">
+							<div class="wrap-slick3 flex-sb flex-w">
+								<div class="wrap-slick3-dots"></div>
+								<div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
+
+								<div class="slick3 gallery-lb">
+									<div class="item-slick3" data-thumb="static/images/model-10.jpg">
+										<div class="wrap-pic-w pos-relative">
+											<img src="static/images/model-10.jpg" alt="IMG-PRODUCT">
+
+											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="static/images/model-10.jpg">
+												<i class="fa fa-expand"></i>
+											</a>
+										</div>
+									</div>
+
+									<div class="item-slick3" data-thumb="static/images/model-10-back.jpg">
+										<div class="wrap-pic-w pos-relative">
+											<img src="static/images/model-10-back.jpg" alt="IMG-PRODUCT">
+
+											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="static/images/model-10-back.jpg">
+												<i class="fa fa-expand"></i>
+											</a>
+										</div>
+									</div>
+
+									<div class="item-slick3" data-thumb="static/images/t-shirts/modal-10.png">
+										<div class="wrap-pic-w pos-relative">
+											<img src="static/images/t-shirts/modal-10.png" alt="IMG-PRODUCT">
+
+											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="static/images/t-shirts/modal-10.png">
+												<i class="fa fa-expand"></i>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-md-6 col-lg-5 p-b-30">
+						<div class="p-r-50 p-t-5 p-lr-0-lg">
+							<h4 class="mtext-105 cl2 js-name-detail p-b-14">
+								Red One Piece
+							</h4>
+
+							<span class="mtext-106 cl2">
+								Rs. 3525.85
+							</span>
+							<!-- Added Size Chart Section -->
+							<div class="size-chart-section p-t-20">
+								<h5 class="mtext-108 cl2 p-b-10">
+									Select Size
+								</h5>
+								<div class="flex-w flex-r-m p-b-10">
+									<div class="size-option m-r-10">
+										<input type="radio" id="size-s-10" name="size-10" value="S" class="size-input">
+										<label for="size-s-10" class="size-label">S</label>
+									</div>
+									<div class="size-option m-r-10">
+										<input type="radio" id="size-m-10" name="size-10" value="M" class="size-input">
+										<label for="size-m-10" class="size-label">M</label>
+									</div>
+									<div class="size-option m-r-10">
+										<input type="radio" id="size-l-10" name="size-10" value="L" class="size-input">
+										<label for="size-l-10" class="size-label">L</label>
+									</div>
+									<div class="size-option">
+										<input type="radio" id="size-xl-10" name="size-10" value="XL" class="size-input">
+										<label for="size-xl-10" class="size-label">XL</label>
+									</div>
+								</div>
+								<a href="#" class="size-chart-link stext-101 cl5" data-toggle="modal" data-target="#sizeChartModal10">
+									View Size Chart
+								</a>
+							</div>
+								<form ><p><input type=button onclick="addToCart('static/images/Tops4/12.png')" value="Add to cart" /></p></form>
+								
+
+							<!--  -->
+							<div class="flex-w flex-m p-l-100 p-t-40 respon7">
+
+								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Facebook">
+									<i class="fa fa-facebook"></i>
+								</a>
+
+								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Twitter">
+									<i class="fa fa-twitter"></i>
+								</a>
+
+								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Google Plus">
+									<i class="fa fa-google-plus"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Size Chart Modal for Modal 10 -->
+		<div class="modal fade" id="sizeChartModal10" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Size Chart</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="table-responsive">
+							<table class="table table-bordered">
+								<thead>
+									<tr>
+										<th>Size</th>
+										<th>Chest (in)</th>
+										<th>Waist (in)</th>
+										<th>Length (in)</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>S</td>
+										<td>34-36</td>
+										<td>28-30</td>
+										<td>26</td>
+									</tr>
+									<tr>
+										<td>M</td>
+										<td>38-40</td>
+										<td>32-34</td>
+										<td>27</td>
+									</tr>
+									<tr>
+										<td>L</td>
+										<td>42-44</td>
+										<td>36-38</td>
+										<td>28</td>
+									</tr>
+									<tr>
+										<td>XL</td>
+										<td>46-48</td>
+										<td>40-42</td>
+										<td>29</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Modal11 -->
+	<div class="wrap-modal11 js-modal11 p-t-60 p-b-20">
+		<div class="overlay-modal11 js-hide-modal11"></div>
+
+		<div class="container">
+			<div class="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent">
+				<button class="how-pos3 hov3 trans-04 js-hide-modal11">
+					<img src="static/images/icons/icon-close.png" alt="CLOSE">
+				</button>
+
+				<div class="row">
+					<div class="col-md-6 col-lg-7 p-b-30">
+						<div class="p-l-25 p-r-30 p-lr-0-lg">
+							<div class="wrap-slick3 flex-sb flex-w">
+								<div class="wrap-slick3-dots"></div>
+								<div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
+
+								<div class="slick3 gallery-lb">
+									<div class="item-slick3" data-thumb="static/images/Frocks5/3.png">
+										<div class="wrap-pic-w pos-relative">
+											<img src="static/images/Frocks5/3.png" alt="IMG-PRODUCT">
+
+											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="static/images/Frocks5/3.png">
+												<i class="fa fa-expand"></i>
+											</a>
+										</div>
+									</div>
+
+									<div class="item-slick3" data-thumb="static/images/Frocks5/3.png">
+										<div class="wrap-pic-w pos-relative">
+											<img src="static/images/Frocks5/3.png" alt="IMG-PRODUCT">
+
+											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="static/images/Frocks5/3.png">
+												<i class="fa fa-expand"></i>
+											</a>
+										</div>
+									</div>
+
+									<div class="item-slick3" data-thumb="static/images/Frocks5/3.png">
+										<div class="wrap-pic-w pos-relative">
+											<img src="static/images/Frocks5/3.png" alt="IMG-PRODUCT">
+
+											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="static/images/Frocks5/3.png">
+												<i class="fa fa-expand"></i>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-md-6 col-lg-5 p-b-30">
+						<div class="p-r-50 p-t-5 p-lr-0-lg">
+							<h4 class="mtext-105 cl2 js-name-detail p-b-14">
+								Purple One Piece
+							</h4>
+
+							<span class="mtext-106 cl2">
+								Rs. 4563.16
+							</span>
+							<!-- Added Size Chart Section -->
+							<div class="size-chart-section p-t-20">
+								<h5 class="mtext-108 cl2 p-b-10">
+									Select Size
+								</h5>
+								<div class="flex-w flex-r-m p-b-10">
+									<div class="size-option m-r-10">
+										<input type="radio" id="size-s-11" name="size-11" value="S" class="size-input">
+										<label for="size-s-11" class="size-label">S</label>
+									</div>
+									<div class="size-option m-r-10">
+										<input type="radio" id="size-m-11" name="size-11" value="M" class="size-input">
+										<label for="size-m-11" class="size-label">M</label>
+									</div>
+									<div class="size-option m-r-10">
+										<input type="radio" id="size-l-11" name="size-11" value="L" class="size-input">
+										<label for="size-l-11" class="size-label">L</label>
+									</div>
+									<div class="size-option">
+										<input type="radio" id="size-xl-11" name="size-11" value="XL" class="size-input">
+										<label for="size-xl-11" class="size-label">XL</label>
+									</div>
+								</div>
+								<a href="#" class="size-chart-link stext-101 cl5" data-toggle="modal" data-target="#sizeChartModal11">
+									View Size Chart
+								</a>
+							</div>
+								<form ><p><input type=button onclick="addToCart('static/images/Frocks5/3.png')" value="Add to cart" /></p></form>
+								
+							
+							<!--  -->
+							<div class="flex-w flex-m p-l-100 p-t-40 respon7">
+
+								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Facebook">
+									<i class="fa fa-facebook"></i>
+								</a>
+
+								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Twitter">
+									<i class="fa fa-twitter"></i>
+								</a>
+
+								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Google Plus">
+									<i class="fa fa-google-plus"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Size Chart Modal for Modal 11-->
+		<div class="modal fade" id="sizeChartModal11" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Size Chart</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="table-responsive">
+							<table class="table table-bordered">
+								<thead>
+									<tr>
+										<th>Size</th>
+										<th>Chest (in)</th>
+										<th>Waist (in)</th>
+										<th>Length (in)</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>S</td>
+										<td>34-36</td>
+										<td>28-30</td>
+										<td>26</td>
+									</tr>
+									<tr>
+										<td>M</td>
+										<td>38-40</td>
+										<td>32-34</td>
+										<td>27</td>
+									</tr>
+									<tr>
+										<td>L</td>
+										<td>42-44</td>
+										<td>36-38</td>
+										<td>28</td>
+									</tr>
+									<tr>
+										<td>XL</td>
+										<td>46-48</td>
+										<td>40-42</td>
+										<td>29</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Modal12 -->
+	<div class="wrap-modal12 js-modal12 p-t-60 p-b-20">
+		<div class="overlay-modal12 js-hide-modal12"></div>
+
+		<div class="container">
+			<div class="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent">
+				<button class="how-pos3 hov3 trans-04 js-hide-modal112">
+					<img src="static/images/icons/icon-close.png" alt="CLOSE">
+				</button>
+
+				<div class="row">
+					<div class="col-md-6 col-lg-7 p-b-30">
+						<div class="p-l-25 p-r-30 p-lr-0-lg">
+							<div class="wrap-slick3 flex-sb flex-w">
+								<div class="wrap-slick3-dots"></div>
+								<div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
+
+								<div class="slick3 gallery-lb">
+									<div class="item-slick3" data-thumb="static/images/model-12.jpg">
+										<div class="wrap-pic-w pos-relative">
+											<img src="static/images/model-12.jpg" alt="IMG-PRODUCT">
+
+											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="static/images/model-12.jpg">
+												<i class="fa fa-expand"></i>
+											</a>
+										</div>
+									</div>
+
+									<div class="item-slick3" data-thumb="static/images/model-12-back.jpg">
+										<div class="wrap-pic-w pos-relative">
+											<img src="static/images/model-12-back.jpg" alt="IMG-PRODUCT">
+
+											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="static/images/model-12-back.jpg">
+												<i class="fa fa-expand"></i>
+											</a>
+										</div>
+									</div>
+
+									<div class="item-slick3" data-thumb="static/images/Tops4/16.png">
+										<div class="wrap-pic-w pos-relative">
+											<img src="static/images/Tops4/16.png" alt="IMG-PRODUCT">
+
+											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="static/images/Tops4/16.png">
+												<i class="fa fa-expand"></i>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-md-6 col-lg-5 p-b-30">
+						<div class="p-r-50 p-t-5 p-lr-0-lg">
+							<h4 class="mtext-105 cl2 js-name-detail p-b-14">
+								Red T-Shirt for Woman
+							</h4>
+
+							<span class="mtext-106 cl2">
+								Rs. 263.15
+							</span>
+							<!-- Added Size Chart Section -->
+							<div class="size-chart-section p-t-20">
+								<h5 class="mtext-108 cl2 p-b-10">
+									Select Size
+								</h5>
+								<div class="flex-w flex-r-m p-b-10">
+									<div class="size-option m-r-10">
+										<input type="radio" id="size-s-12" name="size-12" value="S" class="size-input">
+										<label for="size-s-12" class="size-label">S</label>
+									</div>
+									<div class="size-option m-r-10">
+										<input type="radio" id="size-m-12" name="size-12" value="M" class="size-input">
+										<label for="size-m-12" class="size-label">M</label>
+									</div>
+									<div class="size-option m-r-10">
+										<input type="radio" id="size-l-12" name="size-12" value="L" class="size-input">
+										<label for="size-l-12" class="size-label">L</label>
+									</div>
+									<div class="size-option">
+										<input type="radio" id="size-xl-12" name="size-12" value="XL" class="size-input">
+										<label for="size-xl-12" class="size-label">XL</label>
+									</div>
+								</div>
+								<a href="#" class="size-chart-link stext-101 cl5" data-toggle="modal" data-target="#sizeChartModal12">
+									View Size Chart
+								</a>
+							</div>
+								<form ><p><input type=button onclick="addToCart('static/images/Tops4/16.png')" value="Add to cart" /></p></form>
+								
+
+							<!--  -->
+							<div class="flex-w flex-m p-l-100 p-t-40 respon7">
+
+								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Facebook">
+									<i class="fa fa-facebook"></i>
+								</a>
+
+								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Twitter">
+									<i class="fa fa-twitter"></i>
+								</a>
+
+								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Google Plus">
+									<i class="fa fa-google-plus"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Size Chart Modal for Modal 12 -->
+		<div class="modal fade" id="sizeChartModal12" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Size Chart</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="table-responsive">
+							<table class="table table-bordered">
+								<thead>
+									<tr>
+										<th>Size</th>
+										<th>Chest (in)</th>
+										<th>Waist (in)</th>
+										<th>Length (in)</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>S</td>
+										<td>34-36</td>
+										<td>28-30</td>
+										<td>26</td>
+									</tr>
+									<tr>
+										<td>M</td>
+										<td>38-40</td>
+										<td>32-34</td>
+										<td>27</td>
+									</tr>
+									<tr>
+										<td>L</td>
+										<td>42-44</td>
+										<td>36-38</td>
+										<td>28</td>
+									</tr>
+									<tr>
+										<td>XL</td>
+										<td>46-48</td>
+										<td>40-42</td>
+										<td>29</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    
+	
+
+
+	<script src="static/js/jquery.min.js"></script>
+	<!-- //js -->
+	<!-- countdown -->
+	<link rel="stylesheet" href="static/css/jquery.countdown.css" />
+	<!-- //countdown -->
+	<!-- cart -->
+	<script src="static/js/simpleCart.min.js"></script>
+	<!-- cart -->
+	
+
+<!--===============================================================================================-->	
+	<script src="static/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="static/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="static/vendor/bootstrap/js/popper.js"></script>
+	<script src="static/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="static/vendor/select2/select2.min.js"></script>
+	<script>
+		$(".js-select2").each(function(){
+			$(this).select2({
+				minimumResultsForSearch: 20,
+				dropdownParent: $(this).next('.dropDownSelect2')
+			});
+		})
+	</script>
+<!--===============================================================================================-->
+	<script src="static/vendor/daterangepicker/moment.min.js"></script>
+	<script src="static/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="static/vendor/slick/slick.min.js"></script>
+	<script src="static/js/slick-custom.js"></script>
+<!--===============================================================================================-->
+	<script src="static/vendor/parallax100/parallax100.js"></script>
+	<script>
+        $('.parallax100').parallax100();
+	</script>
+<!--===============================================================================================-->
+	<script src="static/vendor/MagnificPopup/jquery.magnific-popup.min.js"></script>
+	<script>
+		$('.gallery-lb').each(function() { // the containers for all your galleries
+			$(this).magnificPopup({
+		        delegate: 'a', // the selector for gallery item
+		        type: 'image',
+		        gallery: {
+		        	enabled:true
+		        },
+		        mainClass: 'mfp-fade'
+		    });
+		});
+	</script>
+<!--===============================================================================================-->
+	<script src="static/vendor/isotope/isotope.pkgd.min.js"></script>
+<!--===============================================================================================-->
+	<script src="static/vendor/sweetalert/sweetalert.min.js"></script>
+	<script>
+		$('.js-addwish-b2, .js-addwish-detail').on('click', function(e){
+			e.preventDefault();
+		});
+
+		$('.js-addwish-b2').each(function(){
+			var nameProduct = $(this).parent().parent().find('.js-name-b2').html();
+			$(this).on('click', function(){
+				swal(nameProduct, "is added to wishlist !", "success");
+
+				$(this).addClass('js-addedwish-b2');
+				$(this).off('click');
+			});
+		});
+
+		$('.js-addwish-detail').each(function(){
+			var nameProduct = $(this).parent().parent().parent().find('.js-name-detail').html();
+
+			$(this).on('click', function(){
+				swal(nameProduct, "is added to wishlist !", "success");
+
+				$(this).addClass('js-addedwish-detail');
+				$(this).off('click');
+			});
+		});
+
+		/*---------------------------------------------*/
+
+		$('.js-addcart-detail').each(function(){
+			var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();
+			$(this).on('click', function(){
+				swal(nameProduct, "is added to cart !", "success");
+			});
+		});
+	
+	</script>
+<!--===============================================================================================-->
+	<script src="static/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+	<script>
+		$('.js-pscroll').each(function(){
+			$(this).css('position','relative');
+			$(this).css('overflow','hidden');
+			var ps = new PerfectScrollbar(this, {
+				wheelSpeed: 1,
+				scrollingThreshold: 1000,
+				wheelPropagation: false,
+			});
+
+			$(window).on('resize', function(){
+				ps.update();
+			})
+		});
+	</script>
+<!--===============================================================================================-->
+	<script src="static/js/main.js"></script>
+
+	
+
+	<script type="text/javascript">
+
+		var CART = []
+
+		
+		function addToCart(product) {
+
+			if(CART.indexOf(product) == -1){
+				CART.push(product)
+			}
+			   alert("Added Product To Cart")
+		}
+		
+		function checkOut(){
+			
+			return CART.join(' ')
+		}
+		
+		function runPyScript(input){
+			
+			var jqXHR = $.ajax({
+				type: "POST",
+				url: "/tryall",
+				async: false,
+				data: { mydata: input }
+			});
+		
+			return jqXHR.responseText;
+		}
+		
+		$('#check_out').click(function() {
+        if (CART.length === 0) {
+            alert("Your cart is empty. Please add items to the cart first.");
+            return;
+        }
+
+        // Show the alert box
+        alert("Please stand at least 5 feet away for an optimized try-on experience.");
+
+        // Send the cart data to the Flask backend
+        datatosend = CART.join(' ');
+        result = runPyScript(datatosend);
+
+        // Redirect to the try-on page
+        window.location.href = "http://127.0.0.1:5000/tryall";
+
+		});
+		</script>
+
+
+<!-- Chatbot Widget 
+<div id="chatbot-widget" style="position: fixed; bottom: 20px; right: 20px; width: 300px; background: white; border: 1px solid #ccc; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); z-index: 1000;">
+    
+    <div style="background: #077bd4; color: white; padding: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px; font-weight: bold;">
+        Fashion Assistant
+        <button id="chatbot-close" style="float: right; background: none; border: none; color: white; cursor: pointer;">×</button>
+    </div>
+    
+    <div id="chatbot-body" style="height: 300px; overflow-y: auto; padding: 10px;">
+        <div id="chatbot-messages"></div>
+    </div>
+    
+    <div style="padding: 10px; border-top: 1px solid #ccc;">
+        <input type="text" id="chatbot-input" placeholder="Ask me anything..." style="width: 100%; padding: 5px; border: 1px solid #ccc; border-radius: 5px;">
+    </div>
+</div>
+--->
+<!-- Chatbot JavaScript 
+<script>
+    // Toggle chatbot visibility
+    document.getElementById('chatbot-close').addEventListener('click', function() {
+        document.getElementById('chatbot-widget').style.display = 'none';
+    });
+
+    // Handle user input
+    document.getElementById('chatbot-input').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            const userMessage = this.value.trim();
+            if (userMessage) {
+                // Display user message
+                const userMessageElement = document.createElement('div');
+                userMessageElement.textContent = `You: ${userMessage}`;
+                userMessageElement.style.textAlign = 'right';
+                userMessageElement.style.color = '#077bd4';
+                document.getElementById('chatbot-messages').appendChild(userMessageElement);
+
+                // Clear input
+                this.value = '';
+
+                // Send message to backend
+                fetch('/chatbot', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ message: userMessage }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Display chatbot response
+                    const chatbotMessageElement = document.createElement('div');
+                    chatbotMessageElement.textContent = `Bot: ${data.response}`;
+                    chatbotMessageElement.style.textAlign = 'left';
+                    chatbotMessageElement.style.color = '#333';
+                    document.getElementById('chatbot-messages').appendChild(chatbotMessageElement);
+
+                    // Scroll to bottom
+                    document.getElementById('chatbot-body').scrollTop = document.getElementById('chatbot-body').scrollHeight;
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    // Display error message to the user
+                    const errorMessageElement = document.createElement('div');
+                    errorMessageElement.textContent = `Bot: Sorry, something went wrong. Please try again.`;
+                    errorMessageElement.style.textAlign = 'left';
+                    errorMessageElement.style.color = 'red';
+                    document.getElementById('chatbot-messages').appendChild(errorMessageElement);
+                });
+            }
+        }
+    });
+</script>
+--->
+<!-- Chatbot Widget -->
+<div id="chatbot-widget" style="position: fixed; bottom: 20px; right: 20px; width: 350px; background: white; border-radius: 15px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); z-index: 1000; display: none; font-family: 'Arial', sans-serif;">
+    <!-- Chatbot Header -->
+    <div style="background: linear-gradient(135deg, #077bd4 0%, #1e88e5 100%); color: white; padding: 15px; border-top-left-radius: 15px; border-top-right-radius: 15px; font-weight: bold; display: flex; justify-content: space-between; align-items: center;">
+        <div style="display: flex; align-items: center;">
+            <div style="width: 30px; height: 30px; background: white; border-radius: 50%; margin-right: 10px; display: flex; justify-content: center; align-items: center;">
+                <i class="fa fa-comments" style="color: #077bd4;"></i>
+            </div>
+            <span>Fashion Assistant</span>
+        </div>
+        <div>
+            <button id="chatbot-minimize" style="background: none; border: none; color: white; cursor: pointer; margin-right: 5px; font-size: 16px;">−</button>
+            <button id="chatbot-close" style="background: none; border: none; color: white; cursor: pointer; font-size: 16px;">×</button>
+        </div>
+    </div>
+    <!-- Chatbot Body -->
+    <div id="chatbot-body" style="height: 300px; overflow-y: auto; padding: 15px; background: #f9f9f9;">
+        <div id="chatbot-messages">
+            <!-- Welcome message -->
+            <div style="margin-bottom: 10px;">
+                <div style="background: #e3f2fd; padding: 10px; border-radius: 10px; display: inline-block; max-width: 80%;">
+                    <p style="margin: 0; color: #333;">Hello! I'm your fashion assistant. How can I help you today?</p>
+                </div>
+                <div style="clear: both;"></div>
+            </div>
+            <!-- Quick suggestions -->
+            <div style="margin-bottom: 10px; text-align: center;">
+                <button class="quick-question" style="background: #e3f2fd; border: none; border-radius: 15px; padding: 5px 10px; margin: 2px; cursor: pointer; font-size: 12px; color: #077bd4;">Size guide</button>
+                <button class="quick-question" style="background: #e3f2fd; border: none; border-radius: 15px; padding: 5px 10px; margin: 2px; cursor: pointer; font-size: 12px; color: #077bd4;">Return policy</button>
+                <button class="quick-question" style="background: #e3f2fd; border: none; border-radius: 15px; padding: 5px 10px; margin: 2px; cursor: pointer; font-size: 12px; color: #077bd4;">Payment options</button>
+            </div>
+        </div>
+    </div>
+    <!-- Chatbot Input -->
+    <div style="padding: 15px; border-top: 1px solid #eee; background: white; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;">
+        <div style="display: flex;">
+            <input type="text" id="chatbot-input" placeholder="Type your message..." style="flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 20px; outline: none;">
+            <button id="chatbot-send" style="background: #077bd4; color: white; border: none; border-radius: 50%; width: 40px; height: 40px; margin-left: 10px; cursor: pointer;">
+                <i class="fa fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Chatbot Toggle Button -->
+<div id="chatbot-toggle" style="position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; background: linear-gradient(135deg, #077bd4 0%, #1e88e5 100%); border-radius: 50%; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); display: flex; justify-content: center; align-items: center; cursor: pointer; z-index: 999;">
+    <i class="fa fa-comments" style="color: white; font-size: 24px;"></i>
+    <div id="chatbot-notification" style="position: absolute; top: -5px; right: -5px; background: #ff5252; color: white; width: 20px; height: 20px; border-radius: 50%; font-size: 12px; display: flex; justify-content: center; align-items: center; display: none;">1</div>
+</div>
+
+<!-- Chatbot JavaScript -->
+<script>
+    // Toggle chatbot visibility
+    const chatbotWidget = document.getElementById('chatbot-widget');
+    const chatbotToggle = document.getElementById('chatbot-toggle');
+    const chatbotClose = document.getElementById('chatbot-close');
+    const chatbotMinimize = document.getElementById('chatbot-minimize');
+    const chatbotNotification = document.getElementById('chatbot-notification');
+    
+    let isMinimized = false;
+    
+    // Show/hide chatbot
+    chatbotToggle.addEventListener('click', function() {
+        if (isMinimized) {
+            chatbotWidget.style.display = 'block';
+            isMinimized = false;
+        } else {
+            chatbotWidget.style.display = chatbotWidget.style.display === 'none' ? 'block' : 'none';
+        }
+        chatbotNotification.style.display = 'none';
+    });
+    
+    // Close chatbot
+    chatbotClose.addEventListener('click', function() {
+        chatbotWidget.style.display = 'none';
+    });
+    
+    // Minimize chatbot
+    chatbotMinimize.addEventListener('click', function() {
+        chatbotWidget.style.display = 'none';
+        isMinimized = true;
+    });
+    
+    // Quick question buttons
+    document.querySelectorAll('.quick-question').forEach(button => {
+        button.addEventListener('click', function() {
+            const question = this.textContent;
+            document.getElementById('chatbot-input').value = question;
+            document.getElementById('chatbot-input').dispatchEvent(new KeyboardEvent('keypress', {key: 'Enter'}));
+        });
+    });
+    
+    // Handle user input
+    document.getElementById('chatbot-input').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            sendMessage();
+        }
+    });
+    
+    document.getElementById('chatbot-send').addEventListener('click', sendMessage);
+    
+    function sendMessage() {
+        const userMessage = document.getElementById('chatbot-input').value.trim();
+        if (userMessage) {
+            // Display user message
+            const userMessageElement = document.createElement('div');
+            userMessageElement.style.marginBottom = '10px';
+            userMessageElement.style.textAlign = 'right';
+            
+            userMessageElement.innerHTML = `
+                <div style="background: #077bd4; color: white; padding: 10px; border-radius: 10px; display: inline-block; max-width: 80%;">
+                    <p style="margin: 0;">${userMessage}</p>
+                </div>
+                <div style="clear: both;"></div>
+            `;
+            
+            document.getElementById('chatbot-messages').appendChild(userMessageElement);
+            
+            // Clear input
+            document.getElementById('chatbot-input').value = '';
+            
+            // Show typing indicator
+            const typingElement = document.createElement('div');
+            typingElement.style.marginBottom = '10px';
+            typingElement.innerHTML = `
+                <div style="background: #e3f2fd; padding: 10px; border-radius: 10px; display: inline-block; max-width: 80%;">
+                    <div class="typing-indicator">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div style="clear: both;"></div>
+            `;
+            document.getElementById('chatbot-messages').appendChild(typingElement);
+            
+            // Scroll to bottom
+            document.getElementById('chatbot-body').scrollTop = document.getElementById('chatbot-body').scrollHeight;
+            
+            // Send message to backend
+            fetch('/chatbot', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ message: userMessage }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Remove typing indicator
+                document.getElementById('chatbot-messages').removeChild(typingElement);
+                
+                // Display chatbot response
+                const chatbotMessageElement = document.createElement('div');
+                chatbotMessageElement.style.marginBottom = '10px';
+                
+                chatbotMessageElement.innerHTML = `
+                    <div style="background: #e3f2fd; padding: 10px; border-radius: 10px; display: inline-block; max-width: 80%;">
+                        <p style="margin: 0; color: #333;">${data.response}</p>
+                    </div>
+                    <div style="clear: both;"></div>
+                `;
+                
+                document.getElementById('chatbot-messages').appendChild(chatbotMessageElement);
+                
+                // Scroll to bottom
+                document.getElementById('chatbot-body').scrollTop = document.getElementById('chatbot-body').scrollHeight;
+                
+                // Show notification if chat is closed
+                if (chatbotWidget.style.display === 'none' && !isMinimized) {
+                    chatbotNotification.style.display = 'flex';
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                // Remove typing indicator
+                document.getElementById('chatbot-messages').removeChild(typingElement);
+                
+                // Display error message
+                const errorMessageElement = document.createElement('div');
+                errorMessageElement.style.marginBottom = '10px';
+                
+                errorMessageElement.innerHTML = `
+                    <div style="background: #ffebee; padding: 10px; border-radius: 10px; display: inline-block; max-width: 80%;">
+                        <p style="margin: 0; color: #c62828;">Sorry, I'm having trouble responding. Please try again later.</p>
+                    </div>
+                    <div style="clear: both;"></div>
+                `;
+                
+                document.getElementById('chatbot-messages').appendChild(errorMessageElement);
+                
+                // Scroll to bottom
+                document.getElementById('chatbot-body').scrollTop = document.getElementById('chatbot-body').scrollHeight;
+            });
+        }
+    }
+</script>
+
+<div class="modal fade" id="sizeChartModal" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Size Chart</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<div class="table-responsive">
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>Size</th>
+								<th>Chest (in)</th>
+								<th>Waist (in)</th>
+								<th>Length (in)</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>S</td>
+								<td>34-36</td>
+								<td>28-30</td>
+								<td>26</td>
+							</tr>
+							<tr>
+								<td>M</td>
+								<td>38-40</td>
+								<td>32-34</td>
+								<td>27</td>
+							</tr>
+							<tr>
+								<td>L</td>
+								<td>42-44</td>
+								<td>36-38</td>
+								<td>28</td>
+							</tr>
+							<tr>
+								<td>XL</td>
+								<td>46-48</td>
+								<td>40-42</td>
+								<td>29</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+</body>
+</html>

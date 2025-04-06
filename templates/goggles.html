@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ category }} Goggles</title>
+    <link rel="stylesheet" href="static/css/goggle.css">
+</head>
+<body>
+    <h1>{{ category }} Goggles</h1>
+    <div class="goggles-container">
+        {% for goggle in goggles %}
+        <div class="goggle-item">
+            <img src="{{ goggle.image }}" alt="{{ goggle.name }}">
+            <h3>{{ goggle.name }}</h3>
+            <form action="/add_to_cart" method="POST">
+                <input type="hidden" name="item_id" value="{{ goggle.id }}">
+                <input type="hidden" name="category" value="{{ category }}">
+                <button type="submit">Add to Cart</button>
+            </form>
+        </div>
+        {% endfor %}
+    </div>
+    <a href="/cart">Go to Cart</a>
+</body>
+</html>
