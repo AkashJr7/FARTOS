@@ -360,9 +360,7 @@ def logout():
 
 @app.route('/')
 def indexx():
-    if 'user_id' not in session:
-        return redirect('/signup')
-    return render_template('index.html')
+    return render_template('signup.html')
 
 
 	
