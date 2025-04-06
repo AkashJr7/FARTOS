@@ -360,7 +360,10 @@ def logout():
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+	 try:
+		 return render_template('index.html')
+         except Exception as e:
+		 return f"Template error: {str(e)}", 500
 
 
 	
