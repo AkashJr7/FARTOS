@@ -1,6 +1,6 @@
 from tkinter import *
-from PIL import Image
-from PIL import ImageTk
+from Pillow import Image
+from Pillow import ImageTk
 import cv2, threading, os, time
 from threading import Thread
 from os import listdir
