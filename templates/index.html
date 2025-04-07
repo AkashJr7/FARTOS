@@ -65,29 +65,26 @@
 					</a>
 
 					<!-- Menu desktop -->
-					<div class="menu-desktop">
-						<ul class="main-menu">
-							<li class="active-menu">
-								<a href="http://127.0.0.1:5000/index" style="color: black;">Home</a>
-							</li>
-
-							<li>
-								<a href="http://127.0.0.1:5000/product" style="color: black;">Shop</a>
-							</li>
-
-							<li>
-								<a href="http://127.0.0.1:5000/features"style="color: black;">Upcoming Features</a>
-							</li>
-
-							<li>
-								<a href="http://127.0.0.1:5000/about" style="color: black;">About</a>
-							</li>
-
-							<li>
-								<a href="http://127.0.0.1:5000/contact" style="color: black;">Contact</a>
-							</li>
-						</ul>
-					</div>	
+					<!-- Menu desktop -->
+<div class="menu-desktop">
+    <ul class="main-menu">
+        <li class="active-menu">
+            <a href="{{ url_for('index') }}" style="color: black;">Home</a>
+        </li>
+        <li>
+            <a href="{{ url_for('product') }}" style="color: black;">Shop</a>
+        </li>
+        <li>
+            <a href="{{ url_for('features') }}" style="color: black;">Upcoming Features</a>
+        </li>
+        <li>
+            <a href="{{ url_for('about') }}" style="color: black;">About</a>
+        </li>
+        <li>
+            <a href="{{ url_for('contact') }}" style="color: black;">Contact</a>
+        </li>
+    </ul>
+</div>
 
 					
 				</nav>
