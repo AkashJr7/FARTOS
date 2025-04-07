@@ -6,4 +6,4 @@ Flask-Mail
 requests
 Werkzeug
 imutils==0.5.4
-
+PIL
