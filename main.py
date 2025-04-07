@@ -358,9 +358,13 @@ def logout():
     session.pop('user_id', None)
     return redirect('/login')
 
+
 @app.route('/')
-def home():
+def indexx():
+    if 'user_id' not in session:
+        return redirect('/signup')
     return render_template('index.html')
+
 
 	
 # Global variable to store selected item
