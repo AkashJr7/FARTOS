@@ -7,4 +7,4 @@ requests
 Werkzeug
 imutils==0.5.4
 Pillow==10.0.0
-dlib==19.24.1 --find-links https://pypi.python.org/simple/
+
