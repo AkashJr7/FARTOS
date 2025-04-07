@@ -13,7 +13,7 @@ CART = []
 
 # OpenRouter API Configuration
 OPENROUTER_API_URL = "https://openrouter.ai/api/v1/chat/completions"
-OPENROUTER_API_KEY = "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"  # Replace with your OpenRouter API key
+OPENROUTER_API_KEY =os.getenv("OPENROUTER_API_KEY")  # Replace with your OpenRouter API key
 
 # Chatbot route
 @app.route('/chatbot', methods=['POST'])
@@ -408,7 +408,7 @@ def checkOut():
 def tryon(file_path):
 	file_path = file_path.replace(',','/')
 	os.system('python tryOn.py ' + file_path)
-	return redirect('http://127.0.0.1:5000/',code=302, Response=None)
+	return redirect(url_for('index'))  
 '''
 @app.route('/tryall',methods = ['POST', 'GET'])
 def tryall():
