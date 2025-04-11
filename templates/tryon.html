@@ -1,0 +1,10 @@
+<!-- templates/tryon.html -->
+<h2>Try on Clothes from Cart</h2>
+{% for item in cart_items %}
+  <div>
+    <img src="{{ url_for('static', filename='uploads/' + item.filename) }}" width="200">
+    <form action="/tryon/{{ item.filename }}" method="get">
+      <button type="submit">Try On</button>
+    </form>
+  </div>
+{% endfor %}
